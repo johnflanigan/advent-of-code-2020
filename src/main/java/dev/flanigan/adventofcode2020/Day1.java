@@ -1,30 +1,21 @@
 package dev.flanigan.adventofcode2020;
 
-import java.io.BufferedReader;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.Reader;
 import java.util.HashSet;
 import java.util.Set;
-
-import com.google.common.collect.ImmutableSet;
 
 public class Day1 {
 
   private static final int SUM = 2020;
 
-  public void run() {
-    InputStream inputStream = ClassLoader.getSystemResourceAsStream("day1_input.txt");
-    Reader reader = new InputStreamReader(inputStream);
-    BufferedReader bufferedReader = new BufferedReader(reader);
-
-    Set<Integer> input = bufferedReader.lines().map(Integer::parseInt).collect(ImmutableSet.toImmutableSet());
-
-    System.out.printf("Part one solution: %d%n", twoSum(input, SUM));
-    System.out.printf("Part two solution: %d%n", threeSum(input, SUM));
+  public long partOne(Set<Integer> input) {
+    return twoSum(input, SUM);
   }
 
-  public int twoSum(Set<Integer> input, int sum) {
+  public long partTwo(Set<Integer> input) {
+    return threeSum(input, SUM);
+  }
+
+  private int twoSum(Set<Integer> input, int sum) {
     Set<Integer> set = new HashSet<>();
 
     for (int current : input) {
