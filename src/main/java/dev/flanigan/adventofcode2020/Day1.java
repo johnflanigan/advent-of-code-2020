@@ -1,18 +1,21 @@
 package dev.flanigan.adventofcode2020;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
+
+import com.google.common.collect.ImmutableSet;
 
 public class Day1 {
 
   private static final int SUM = 2020;
 
-  public long partOne(Set<Integer> input) {
-    return twoSum(input, SUM);
+  public long partOne(List<Integer> input) {
+    return twoSum(ImmutableSet.copyOf(input), SUM);
   }
 
-  public long partTwo(Set<Integer> input) {
-    return threeSum(input, SUM);
+  public long partTwo(List<Integer> input) {
+    return threeSum(ImmutableSet.copyOf(input), SUM);
   }
 
   private int twoSum(Set<Integer> input, int sum) {

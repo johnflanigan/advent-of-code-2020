@@ -1,10 +1,10 @@
 package dev.flanigan.adventofcode2020;
 
-import java.util.Set;
+import java.util.List;
 
 public class Day2 {
 
-  public long partOne(Set<Policy> policies) {
+  public long partOne(List<Policy> policies) {
     return policies.stream().filter(policy -> {
       int count = 0;
       for (Character c : policy.getPassword().toCharArray()) {
@@ -17,7 +17,7 @@ public class Day2 {
     }).count();
   }
 
-  public long partTwo(Set<Policy> policies) {
+  public long partTwo(List<Policy> policies) {
     return policies.stream().filter(policy -> {
       int count = 0;
 

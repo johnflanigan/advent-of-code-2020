@@ -6,23 +6,23 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
-import java.util.Set;
+import java.util.List;
 import java.util.function.Function;
 
-import com.google.common.collect.ImmutableSet;
+import com.google.common.collect.ImmutableList;
 
 public class Loader<E> {
 
-  public Set<E> loadInput(String filename, Function<String, E> parser) {
+  public List<E> loadInput(String filename, Function<String, E> parser) {
     try (
         InputStream inputStream = ClassLoader.getSystemResourceAsStream(filename);
         Reader reader = new InputStreamReader(inputStream);
         BufferedReader bufferedReader = new BufferedReader(reader)) {
-      return bufferedReader.lines().map(parser).collect(ImmutableSet.toImmutableSet());
+      return bufferedReader.lines().map(parser).collect(ImmutableList.toImmutableList());
     } catch (IOException e) {
       e.printStackTrace();
     }
 
-    return ImmutableSet.of();
+    return ImmutableList.of();
   }
 }

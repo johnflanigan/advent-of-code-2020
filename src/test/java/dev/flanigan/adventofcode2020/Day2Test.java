@@ -2,7 +2,7 @@ package dev.flanigan.adventofcode2020;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import java.util.Set;
+import java.util.List;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -10,7 +10,7 @@ import org.junit.Test;
 public class Day2Test {
 
   private Day2 day2;
-  private Set<Policy> input;
+  private List<Policy> input;
 
   @Before
   public void setup() {
